@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {Routes, BrowserRouter as Router, Route} from "react-router-dom"
+import { Helmet } from "react-helmet";
+import TicTacToe from "./main_app/TicTacToe";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Helmet>
+        <title>
+          TicTacToe
+        </title>
+        <meta name="description" content="Just A Fun Game !" />
+      </Helmet>
+
+      <Router>
+          <Routes>
+            
+            <Route element={<TicTacToe />} path="/" />
+           
+          </Routes>
+      </Router>
+
+      
     </div>
   );
 }
